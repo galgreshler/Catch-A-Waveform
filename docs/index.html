@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="stylebiblio.css">
+<link rel="stylesheet" type="text/css" href="index.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/bibtextohtml.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Catch-A-Waveform</title>
+</head>
+<body>
+<div id="home" class="section" style="background-color: lightblue">
+    <h1>Catch-A-Waveform - Project Website</h1>
+    <a href="#unconditional">Unconditional Generation</a> |
+    <a href="#music">Music Variations</a> |
+    <a href="#be">Bandwidth-Extenstion</a> |
+    <a href="#inpainting">Inpainting</a> |
+    <a href="#denoising">Denoising</a> |
+    <a href="#limitations">Limitations</a>
+</div>
+<div id="unconditional" class="section odd">
+    <h1>Unconditional Generation</h1>
+    Unconditional generation of different signal types with arbitrary sizes.
+    <h2>Monophonic Music</h2>
+    <table id="instruments_table">
+        <tr>
+            <th align="center">#</th>
+            <th>Instrument</th>
+            <th>Input (Real)</th>
+            <th>Fake (20 [sec])</th>
+            <th>Fake (40 [sec])</th>
+            <th>Fake (60 [sec])</th>
+        </tr>
+    </table>
+    <button id="add_instruments_button">Show More Examples</button>
+    <button onclick="location.href='#home'" class="back">Back to Top</button>
+
+    <h2>Speech Signals</h2>
+    <table id="speeches_table">
+        <tr>
+            <th align="center" colspan="2"></th>
+            <th>Input (Real)</th>
+            <th>Fake (20 [sec])</th>
+            <th>Fake (40 [sec])</th>
+            <th>Fake (60 [sec])</th>
+        </tr>
+    </table>
+    <button id="add_speeches_button">Show More Examples</button>
+    <button onclick="location.href='#home'" class="back">Back to Top</button>
+
+    <h2 id="unconditionl_ambient">Ambient Sounds</h2>
+    <table id="ambient_table">
+        <tr>
+            <th align="center"></th>
+            <th>Input (Real)</th>
+            <th>Fake (20 [sec])</th>
+            <th>Fake (40 [sec])</th>
+            <th>Fake (60 [sec])</th>
+        </tr>
+    </table>
+    <button onclick="location.href='#home'" class="back">Back to Top</button>
+
+    <h2 id="rf">Effect of Receptive Field</h2>
+    Demonstration of creating speech signals, with different receptive field sizes.
+    <table id="rf_table">
+        <tr>
+            <th align="center">training length [sec]</th>
+            <th align="center">Input (Real)</th>
+            <th align="center">Small Receptive Field<br>2[sec]-60[ms]</th>
+            <th align="center">Normal Receptive Field<br>4[sec]-120[ms]</th>
+            <th align="center">Large Receptive Field<br>8[sec]-240[ms]</th>
+        </tr>
+        <tr>
+            <td align="center">20</td>
+            <td align="center"><audio src="audio/rf/0_trump_real.ogg" controls></audio></td>
+            <td align="center"><audio src="audio/rf/0_trump_small1_fake.ogg" controls></audio><br><audio src="audio/rf/0_trump_small2_fake.ogg" controls></audio></td>
+            <td align="center"><audio src="audio/rf/0_trump_normal1_fake.ogg" controls></audio><br><audio src="audio/rf/0_trump_normal2_fake.ogg" controls></audio></td>
+            <td align="center"><audio src="audio/rf/0_trump_large1_fake.ogg" controls></audio><br><audio src="audio/rf/0_trump_large2_fake.ogg" controls></audio></td>
+        </tr>
+        <tr>
+            <td align="center">45</td>
+            <td align="center"><audio src="audio/rf/1_trump_real.ogg" controls></audio></td>
+            <td align="center"><audio src="audio/rf/1_trump_small1_fake.ogg" controls></audio><br><audio src="audio/rf/1_trump_small2_fake.ogg" controls></audio></td>
+            <td align="center"><audio src="audio/rf/1_trump_normal1_fake.ogg" controls></audio><br><audio src="audio/rf/1_trump_normal2_fake.ogg" controls></audio></td>
+            <td align="center"><audio src="audio/rf/1_trump_large1_fake.ogg" controls></audio><br><audio src="audio/rf/1_trump_large2_fake.ogg" controls></audio></td>
+        </tr>
+    </table>
+    <button onclick="location.href='#home'" class="back">Back to Top</button>
+</div>
+
+<div id="music" class="section even">
+    <h1>Music Generation</h1>
+    Training on famous songs, and then creating different variations on these songs.
+    <table id="music_table">
+        <tr>
+            <th align="center">Name</th>
+            <th align="center">Artist</th>
+            <th align="center">Input (Real)</th>
+            <th align="center">Fake 1</th>
+            <th align="center">Fake 2</th>
+        </tr>
+    </table>
+    <button id="add_music_button">Show More Examples</button>
+    <button onclick="location.href='#home'" class="back">Back to Top</button>
+</div>
+
+<div id="be" class="section odd">
+    <h1>Audio Bandwidth-Extension</h1>
+    In this section there are bandwidth extention examles on VCTK [3] dataset, compare to TFiLM [2] model.
+    For each examples there are six signals; In the upper row (left to right): low-resolution version, ground-truth high resolution signal, the signal used for training our model (20-20 [sec]); In the lower row: extended with TFiLM model trained on single speaker (30 [min]), extended with TFiLM model trained on multi speaker (600 [min]), extended with our model.
+<!--    <table id="sr_table">-->
+<!--        <tr>-->
+<!--            <th>File name</th>-->
+<!--            <th align="center">Input (Low-Resolution)</th>-->
+<!--            <th align="center">GT (High-Resolution)</th>-->
+<!--            <th align="center">TFiLM (single)</th>-->
+<!--            <th align="center">TFiLM (multi)</th>-->
+<!--            <th align="center">Our Training Signal</th>-->
+<!--            <th align="center">Ours</th>-->
+<!--        </tr>-->
+<!--    </table>-->
+    <table id="sr_table2">
+<!--        <tr><th colspan="3" style="background-color: lightgrey; background-clip: padding-box">p347_410</th></tr>-->
+<!--        <tr>-->
+<!--            <td align="center">Input (Low Resolution)-->
+<!--                <div class="imgbox">-->
+<!--                    <img class="center-fit" src="graphics/sr/p347_410_lr.png" width="300">-->
+<!--                </div>-->
+<!--                <audio src="audio/sr/p347_410_lr.ogg" controls></audio>-->
+<!--            </td>-->
+<!--            <td align="center">GT (High-Resolution)-->
+<!--                <div class="imgbox">-->
+<!--                    <img class="center-fit" src="graphics/sr/p347_410_gt.png" width="300">-->
+<!--                </div>-->
+<!--                <audio src="audio/sr/p347_410_gt.ogg" controls></audio>-->
+<!--            </td>-->
+<!--            <td align="center">Our Training Signal-->
+<!--                <div class="imgbox">-->
+<!--                    <img class="center-fit" src="graphics/sr/p347_410_training.png" width="300">-->
+<!--                </div>-->
+<!--                <audio src="audio/sr/p347_410_training.ogg" controls></audio>-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td align="center">TFiLM (single)-->
+<!--                <div class="imgbox">-->
+<!--                    <img class="center-fit" src="graphics/sr/p347_410_pr_single.png" width="300">-->
+<!--                </div>-->
+<!--                <audio src="audio/sr/p347_410_pr_single.ogg" controls></audio>-->
+<!--            </td>-->
+<!--            <td align="center">TFiLM (multi)-->
+<!--                <div class="imgbox">-->
+<!--                    <img class="center-fit" src="graphics/sr/p347_410_pr_multi.png" width="300">-->
+<!--                </div>-->
+<!--                <audio src="audio/sr/p347_410_pr_multi.ogg" controls></audio>-->
+<!--            </td>-->
+<!--            <td align="center">Ours-->
+<!--                <div class="imgbox">-->
+<!--                    <img class="center-fit" src="graphics/sr/p347_410_ours.png" width="300">-->
+<!--                </div>-->
+<!--                <audio src="audio/sr/p347_410_ours.ogg" controls></audio>-->
+<!--            </td>-->
+<!--        </tr>-->
+    </table>
+    <button id="add_sr_button">Show More Examples</button>
+    <button onclick="location.href='#home'" class="back">Back to Top</button>
+</div>
+
+<div id="inpainting" class="section even">
+    <h1>Inpainting</h1>
+    Completing a missing part in a given signal in rock songs. Comparison between GACELA [1] model (trained on 8 [hours]) and ours (trained on 12 [sec]).
+    <table id="inpainting_table">
+        <tr>
+            <th align="center">#</th>
+            <th align="center">Input</th>
+            <th align="center">GT</th>
+            <th align="center">GACELA</th>
+            <th align="center">Ours</th>
+        </tr>
+    </table>
+    <button id="add_inpainting_button">Show More Examples</button>
+    <button onclick="location.href='#home'" class="back">Back to Top</button>
+</div>
+
+<div id="denoising" class="section odd">
+    <h1>Denoising</h1>
+    <div class="description">In this part, we demonstrate denoising old recording by famous violinist <a href="https://en.wikipedia.org/wiki/Joseph_Joachim" target="_blank">Joseph Joachim</a>.</div>
+    <table id="denoising_table">
+    </table>
+    <button onclick="location.href='#home'" class="back">Back to Top</button>
+</div>
+
+<div id="limitations" class="section even">
+    <h1>Limitations</h1>
+    Here are some examples where our model created signals of degraded quality.
+    <table id="limitations_table">
+        <tr>
+            <th align="center">#</th>
+            <th align="center">Real (Input)</th>
+            <th align="center">Fake</th>
+        </tr>
+    </table>
+    <button onclick="location.href='#home'" class="back">Back to Top</button>
+</div>
+
+<div id="references" class="section">
+    <h1>References</h1>
+    <textarea hidden name="bibtex_input" id="bibtex_input" cols=50 rows=20>
+<?php
+    echo file_get_contents("sm.bib");
+?>
+</textarea>
+    <div id="bibtex_errors"></div>
+    <div class="bibtex_template">
+        <li>
+            <a class="url"><span class="title"></span></a></br>
+            <span class="author"></span></br>
+            <span class="booktitle"></span>
+            <span class="if publisher">
+	<span class="publisher"></span>.
+    </span>
+            <span class="if pages">
+      p. <span class="pages"></span>.
+    </span>
+            <span class="if year">
+    <span class="year"></span></span>
+            </br>
+            <a class="bibtexCodeLink">
+                [bibtex]
+            </a>
+            </br></br>
+        </li>
+    </div>
+
+    <ol id="bibtex_display">
+    </ol>
+    <h1>Resources</h1>
+    Speeches are taken from <a href="https://millercenter.org/the-presidency/presidential-speeches" target="_blank">Miller Center</a> and <a href="https://americanrhetoric.com/" target="_blank">American Rhetoric</a> websites.
+    <br>
+    Cliparts are taken from <a href="http://clipart-library.com/" target="_blank">Clipart Library</a> website.
+</div>
+</body>
+</html>
