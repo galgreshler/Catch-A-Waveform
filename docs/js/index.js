@@ -31,10 +31,10 @@ function load_inpainting_files() {
         }
         tr += '<tr>';
         tr += '<th>' + (idx+1).toString() + '</th>'
-        tr +='<td><audio src="audio/inpainting/'+inpainting_files[idx]+'-with_hole.ogg" controls></audio></td>';
-        tr +='<td><audio src="audio/inpainting/'+inpainting_files[idx]+'-real.ogg" controls></audio></td>';
-        tr +='<td><audio src="audio/inpainting/'+inpainting_files[idx]+'-gacela.ogg" controls></audio></td>';
-        tr +='<td><audio src="audio/inpainting/'+inpainting_files[idx]+'-ours.ogg" controls></audio></td>';
+        tr +='<td><audio src="' + audio_base_url + 'audio/inpainting/'+inpainting_files[idx]+'-with_hole.ogg" controls></audio></td>';
+        tr +='<td><audio src="' + audio_base_url + 'audio/inpainting/'+inpainting_files[idx]+'-real.ogg" controls></audio></td>';
+        tr +='<td><audio src="' + audio_base_url + 'audio/inpainting/'+inpainting_files[idx]+'-gacela.ogg" controls></audio></td>';
+        tr +='<td><audio src="' + audio_base_url + 'audio/inpainting/'+inpainting_files[idx]+'-ours.ogg" controls></audio></td>';
         tr+='</tr>';
     }
     number_of_inpainting_files += j;
