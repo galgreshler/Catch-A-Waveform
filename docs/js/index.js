@@ -30,11 +30,11 @@ function load_inpainting_files() {
             break
         }
         tr += '<tr>';
-        tr += '<th>' + (idx+1).toString() + '</th>';
-        tr +='<td><audio src="' + audio_base_url + 'audio/inpainting/'+inpainting_files[idx]+'-with_hole.ogg" controls></audio></td>';
-        tr +='<td><audio src="' + audio_base_url + 'audio/inpainting/'+inpainting_files[idx]+'-real.ogg" controls></audio></td>';
-        tr +='<td><audio src="' + audio_base_url + 'audio/inpainting/'+inpainting_files[idx]+'-gacela.ogg" controls></audio></td>';
-        tr +='<td><audio src="' + audio_base_url + 'audio/inpainting/'+inpainting_files[idx]+'-ours.ogg" controls></audio></td>';
+        tr += '<th>' + (idx+1).toString() + '</th>'
+        tr +='<td><audio src="audio/inpainting/'+inpainting_files[idx]+'-with_hole.ogg" controls></audio></td>';
+        tr +='<td><audio src="audio/inpainting/'+inpainting_files[idx]+'-real.ogg" controls></audio></td>';
+        tr +='<td><audio src="audio/inpainting/'+inpainting_files[idx]+'-gacela.ogg" controls></audio></td>';
+        tr +='<td><audio src="audio/inpainting/'+inpainting_files[idx]+'-ours.ogg" controls></audio></td>';
         tr+='</tr>';
     }
     number_of_inpainting_files += j;
@@ -149,9 +149,9 @@ function load_sr_files() {
         tr3 += '<audio src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_pr_multi.ogg" controls></audio></td>';
         tr3 += '<td align="center">Ours<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_ours.png" width="300"></div>'
         tr3 += '<audio src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_ours.ogg" controls></audio></td></tr>';
-        $('#sr_table2').append(tr);
-        $('#sr_table2').append(tr2);
-        $('#sr_table2').append(tr3);
+        $('#sr_table').append(tr);
+        $('#sr_table').append(tr2);
+        $('#sr_table').append(tr3);
     }
     number_of_sr_files += j;
     if (number_of_sr_files >= sr_files.length) {
