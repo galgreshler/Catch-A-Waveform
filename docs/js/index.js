@@ -150,14 +150,9 @@ function load_sr_files() {
         tr3 += '<td align="center">Ours<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_ours.png" width="300"></div>'
         tr3 += '<audio src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_ours.ogg" controls></audio></td></tr>';
 
-        tr4 = '<tr><td align="center">Input 8KHz (Low Resolution)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_lr8.png" width="300"></div>';
-        tr4 += '<audio src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_lr8.ogg" controls></audio></td>';
-        tr4 += '<td align="center">Ours (8 -> 16KHz)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_ours_8_to_16.png" width="300"></div>'
-        tr4 += '<audio src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_ours_8_to_16.ogg" controls></audio></td></tr>';
         $('#sr_table').append(tr);
         $('#sr_table').append(tr2);
         $('#sr_table').append(tr3);
-        $('#sr_table').append(tr4);
     }
     number_of_sr_files += j;
     if (number_of_sr_files >= sr_files.length) {
