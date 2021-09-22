@@ -1,1 +1,4 @@
+outputs
 .idea/
+*.pyc
+__pycache__
