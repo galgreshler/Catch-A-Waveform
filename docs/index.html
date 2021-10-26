@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Catch-A-Waveform</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    body, h1, h2, h3, h4, h5, h6 {
-        font-family: "Lato", sans-serif
-    }
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEJF357XQ1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    .w3-bar, h1, button {
-        font-family: "Montserrat", sans-serif
-    }
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-    .fa-anchor, .fa-coffee {
-        font-size: 200px
-    }
+        gtag('js', new Date());
 
-    .w3-content {
-        max-width: 1280px;
-    }
+        gtag('config', 'G-EEJF357XQ1');
+    </script>
+    <title>Catch-A-Waveform</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylebiblio.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Lato", sans-serif
+        }
 
-    .short-audio {
-        width: 250px;
-    }
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript" src="js/bibtextohtml.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+        .w3-bar, h1, button {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .w3-content {
+            max-width: 1280px;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+            text-align: center
+        }
+
+        /* Clear floats after image containers */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bibtextohtml.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
 <body>
 
 <!-- Navbar -->
@@ -40,45 +62,54 @@
            href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
                 class="fa fa-bars"></i></a>
         <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-        <a href="#unconditional" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Uncoditional
+        <a href="#unconditional" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+           id="unconditional_link">Uncoditional
             Generation</a>
-        <a href="#music" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Music
+        <a href="#music" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" id="music_link">Music
             Variations</a>
         <a href="#be"
-           class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Bandwidth-Extenstion</a>
-        <a href="#inpainting" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Inpainting</a>
-        <a href="#denoising" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Denoising</a>
+           class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+           id="be_link">Bandwidth-Extenstion</a>
+        <a href="#inpainting" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+           id="inpainting_link">Inpainting</a>
+        <a href="#denoising" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+           id="denoising_link">Denoising</a>
         <a href="#limitations"
-           class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Limitations</a>
+           class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+           id="limitations_link">Limitations</a>
     </div>
 
     <!-- Navbar on small screens -->
     <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-        <a href="#unconditional" class="w3-bar-item w3-button w3-padding-large">Uncoditional
+        <a href="#unconditional" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Uncoditional
             Generation</a>
-        <a href="#music" class="w3-bar-item w3-button w3-padding-large">Music
+        <a href="#music" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Music
             Variations</a>
-        <a href="#be" class="w3-bar-item w3-button w3-padding-large">Bandwidth-Extenstion</a>
-        <a href="#inpainting" class="w3-bar-item w3-button w3-padding-large">Inpainting</a>
-        <a href="#denoising" class="w3-bar-item w3-button w3-padding-large">Denoising</a>
-        <a href="#limitations" class="w3-bar-item w3-button w3-padding-large">Limitations</a>
+        <a href="#be" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Bandwidth-Extenstion</a>
+        <a href="#inpainting" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Inpainting</a>
+        <a href="#denoising" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Denoising</a>
+        <a href="#limitations" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Limitations</a>
     </div>
 </div>
 
 <!-- Header -->
 <header class="w3-container w3-light-blue w3-center" style="padding: 64px 16px 32px;">
-    <h1 class="w3-margin w3-jumbo">Catch-A-Waveform</h1>
+    <h1 class="w3-margin w3-jumbo w3-hide-small">Catch-A-Waveform</h1>
+    <h1 class="w3-margin w3-hide-large w3-hide-medium" style="font-size: 48px">Catch-A-Waveform</h1>
     <p class="w3-xlarge">Learning to Generate Audio from a Single Short Example</p>
-    <p class="w3-large">Gal Greshler, <a href="https://tamarott.github.io/" style="color: blue">Tamar Rott Shaham</a>,
+    <p class="w3-large"><a href="mailto:galgreshler@gmail.com" style="color: blue">Gal Greshler</a>, <a
+            href="https://tamarott.github.io/" style="color: blue" target="_blank">Tamar Rott Shaham</a>,
         <a
-                href="http://webee.technion.ac.il/people/tomermic/" style="color: blue">Tomer Michaeli</a></p>
+                href="https://tomer.net.technion.ac.il/" style="color: blue" target="_blank">Tomer
+            Michaeli</a></p>
     <p class="w3-image"><img src="graphics/Technion%20IIT%20English%203-lines%20centered.png" style="height: 100px"></p>
     <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top"
-            onclick="location.href='https://github.com/galgreshler/Catch-A-Waveform'">View on GitHub
+            onclick="window.open('https://github.com/galgreshler/Catch-A-Waveform', '_blank')">View on GitHub
     </button>
     <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top"
-            onclick="location.href='https://arxiv.org/pdf/2106.06426.pdf'">Read Paper
+            onclick="window.open('https://arxiv.org/pdf/2106.06426.pdf', '_blank')">Read Paper
     </button>
+    <h6 class="w3-hide-large w3-hide-medium">Audio files may take few seconds to load</h6>
 </header>
 
 <!-- Abstract -->
@@ -105,6 +136,25 @@
                 nature of audio signals in general.</h5>
 
             <p class="w3-text-grey"></p>
+        </div>
+        <div class="w3-hide-small">
+            <div class="row">
+                <div class="column">
+                    <img src="graphics/thumbnail_grey.png" style="width:100%">
+                    <b>Catch-A-Waveform:</b> Waveform generation from a single short example
+                </div>
+                <div class="column">
+                    <img src="graphics/applications.png" style="width:100%">
+                    <b>Catch-A-Waveform's Applications</b>
+                </div>
+            </div>
+        </div>
+        <div class="w3-hide-large w3-hide-medium" style="text-align: center">
+            <p class="w3-image" style="text-align: center"><img src="graphics/thumbnail_grey.png" style="width: 100%">
+            </p>
+            <b>Catch-A-Waveform:</b> Waveform generation from a single short example
+            <img src="graphics/applications.png" style="width:100%">
+            <b>Catch-A-Waveform's Applications</b>
         </div>
     </div>
 </div>
@@ -136,15 +186,15 @@
 
             <h5 id="unconditional_speech">Speech Signals</h5>
             <div class="w3-hide-small">
-            <table id="speeches_table">
-                <tr>
-                    <th style="text-align: center" colspan="1"></th>
-                    <th>Input (Real)</th>
-                    <th>Fake (20 [sec])</th>
-                    <th>Fake (40 [sec])</th>
-                    <th>Fake (60 [sec])</th>
-                </tr>
-            </table>
+                <table id="speeches_table">
+                    <tr>
+                        <th style="text-align: center" colspan="1"></th>
+                        <th>Input (Real)</th>
+                        <th>Fake (20 [sec])</th>
+                        <th>Fake (40 [sec])</th>
+                        <th>Fake (60 [sec])</th>
+                    </tr>
+                </table>
             </div>
             <div class="w3-hide-large w3-hide-medium ">
                 <table id="speeches_table_small" class="w3-table-all w3-bordered w3-centered">
@@ -174,15 +224,15 @@
             <h5 id="rf">Effect of Receptive Field</h5>
             Demonstration of creating speech signals, with different receptive field sizes.
             <div class="w3-hide-small">
-            <table id="rf_table">
-                <tr>
-                    <th style="text-align: center">training length [sec]</th>
-                    <th style="text-align: center">Input (Real)</th>
-                    <th style="text-align: center">Small Receptive Field<br>2[sec]-60[ms]</th>
-                    <th style="text-align: center">Normal Receptive Field<br>4[sec]-120[ms]</th>
-                    <th style="text-align: center">Large Receptive Field<br>8[sec]-240[ms]</th>
-                </tr>
-            </table>
+                <table id="rf_table">
+                    <tr>
+                        <th style="text-align: center">training length [sec]</th>
+                        <th style="text-align: center">Input (Real)</th>
+                        <th style="text-align: center">Small Receptive Field<br>2[sec]-60[ms]</th>
+                        <th style="text-align: center">Normal Receptive Field<br>4[sec]-120[ms]</th>
+                        <th style="text-align: center">Large Receptive Field<br>8[sec]-240[ms]</th>
+                    </tr>
+                </table>
             </div>
             <div class="w3-hide-large w3-hide-medium ">
                 <table id="rf_table_small" class="w3-table-all w3-bordered w3-centered">
@@ -201,15 +251,15 @@
             <h5 class="w3-text-grey">Training on famous songs, and then creating different variations on these
                 songs.</h5>
             <div class="w3-hide-small">
-            <table id="music_table">
-                <tr>
-                    <th style="text-align: center">Name</th>
-                    <th style="text-align: center">Artist</th>
-                    <th style="text-align: center">Input (Real)</th>
-                    <th style="text-align: center">Fake 1</th>
-                    <th style="text-align: center">Fake 2</th>
-                </tr>
-            </table>
+                <table id="music_table">
+                    <tr>
+                        <th style="text-align: center">Name</th>
+                        <th style="text-align: center">Artist</th>
+                        <th style="text-align: center">Input (Real)</th>
+                        <th style="text-align: center">Fake 1</th>
+                        <th style="text-align: center">Fake 2</th>
+                    </tr>
+                </table>
             </div>
             <div class="w3-hide-large w3-hide-medium ">
                 <table id="music_table_small" class="w3-table-all w3-bordered w3-centered">
@@ -233,8 +283,8 @@
                 extended with TFiLM model trained on multi speaker (600 [min]), extended with our model. </h5>
             <h5>4Khz -> 16KHz Extensions</h5>
             <div class="w3-hide-small">
-            <table id="sr_table">
-            </table>
+                <table id="sr_table">
+                </table>
             </div>
             <div class="w3-hide-large w3-hide-medium ">
                 <table id="sr_table_small" class="w3-table-all w3-bordered w3-centered">
@@ -250,8 +300,8 @@
                 results. Here are some examples where the input signals are sampled at 8Khz.
             </h5>
             <div class="w3-hide-small">
-            <table id="sr_table_8_to_16">
-            </table>
+                <table id="sr_table_8_to_16">
+                </table>
             </div>
             <div class="w3-hide-large w3-hide-medium ">
                 <table id="sr_table_8_to_16_small" class="w3-table-all w3-bordered w3-centered">
@@ -271,14 +321,14 @@
             <h5 class="w3-text-grey">Completing a missing part in a given signal in rock songs. Comparison between
                 GACELA [1] model (trained on 8 [hours]) and ours (trained on 12 [sec]).</h5>
             <div class="w3-hide-small">
-            <table id="inpainting_table">
-                <tr>
-                    <th style="text-align: center">Input</th>
-                    <th style="text-align: center">GT</th>
-                    <th style="text-align: center">GACELA</th>
-                    <th style="text-align: center">Ours</th>
-                </tr>
-            </table>
+                <table id="inpainting_table">
+                    <tr>
+                        <th style="text-align: center">Input</th>
+                        <th style="text-align: center">GT</th>
+                        <th style="text-align: center">GACELA</th>
+                        <th style="text-align: center">Ours</th>
+                    </tr>
+                </table>
             </div>
             <div class="w3-hide-large w3-hide-medium ">
                 <table id="inpainting_table_small" class="w3-table-all w3-bordered w3-centered">
@@ -300,11 +350,28 @@
                 play/pause button next to each example. You can switch between the noisy and denoised version by
                 clicking the "switch" button.</h5>
             <div class="w3-hide-small">
-            <table id="denoising_table">
-            </table>
+                <table id="denoising_table">
+                </table>
             </div>
             <div class="w3-hide-large w3-hide-medium ">
                 <table id="denoising_table_small" class="w3-table-all w3-bordered w3-centered">
+                </table>
+            </div>
+
+            <h1>Denoising Synthesized Noisy Signals</h1>
+            <h5 class="w3-text-grey">In order to measure the SNR improvements of denoised signals, we took a clean
+                recording of Bach's Adagio played by violinist <a href="https://www.youtube.com/watch?v=c3mwVaQIZ1c"
+                                                                  target="_blank">Hilary Hahn</a> and added to it white
+                noise and old <a href="https://freesound.org/people/lollosound/sounds/387005/" target="_blank">gramophone
+                    noise</a> in two noise levels. You can listen to the input and reconstructed sounds, where the SNR
+                levels and noise types are written above the spectrograms.
+            </h5>
+            <div class="w3-hide-small">
+                <table id="denoising_synth_table">
+                </table>
+            </div>
+            <div class="w3-hide-large w3-hide-medium ">
+                <table id="denoising_synth_table_small" class="w3-table-all w3-bordered w3-centered">
                 </table>
             </div>
             <button onclick="location.href='#'" class="back">Back to Top</button>
@@ -319,13 +386,13 @@
             <h1>Limitations</h1>
             <h5 class="w3-text-grey">Here are some examples where our model created signals of degraded quality.</h5>
             <div class="w3-hide-small">
-            <table id="limitations_table">
-                <tr>
-                    <th style="text-align: center">Real (Input)</th>
-                    <th style="text-align: center">Fake</th>
-                    <th></th>
-                </tr>
-            </table>
+                <table id="limitations_table">
+                    <tr>
+                        <th style="text-align: center">Real (Input)</th>
+                        <th style="text-align: center">Fake</th>
+                        <th></th>
+                    </tr>
+                </table>
             </div>
             <div class="w3-hide-large w3-hide-medium ">
                 <table id="limitations_table_small" class="w3-table-all w3-bordered w3-centered">
@@ -333,6 +400,47 @@
             </div>
             <button onclick="location.href='#'" class="back">Back to Top</button>
         </div>
+    </div>
+</div>
+<div class="w3-row-padding w3-padding-64 w3-container" id="references">
+    <div class="w3-content">
+        <h1>References</h1>
+        <textarea hidden name="bibtex_input" id="bibtex_input" cols=50 rows=20>
+<?php
+    echo file_get_contents("sm.bib");
+?>
+</textarea>
+        <div id="bibtex_errors"></div>
+        <div class="bibtex_template">
+            <li>
+                <a class="url"><span class="title"></span></a></br>
+                <span class="author"></span></br>
+                <span class="booktitle"></span>
+                <span class="if publisher">
+	<span class="publisher"></span>.
+    </span>
+                <span class="if pages">
+      p. <span class="pages"></span>.
+    </span>
+                <span class="if year">
+    <span class="year"></span></span>
+                </br>
+                <a class="bibtexCodeLink">
+                    [bibtex]
+                </a>
+                </br></br>
+            </li>
+        </div>
+
+        <ol id="bibtex_display">
+        </ol>
+        <h1>Resources</h1>
+        Speeches are taken from <a href="https://millercenter.org/the-presidency/presidential-speeches"
+                                   target="_blank">Miller Center</a> and <a href="https://americanrhetoric.com/"
+                                                                            target="_blank">American Rhetoric</a>
+        websites.
+        <br>
+        Cliparts are taken from <a href="http://clipart-library.com/" target="_blank">Clipart Library</a> website.
     </div>
 </div>
 

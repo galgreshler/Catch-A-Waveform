@@ -52,8 +52,7 @@ function load_instruments_files() {
             $('#instruments_table').append(tr);
         } else {
             tr = '<tr>';
-            tr += '<th style="text-align: center" rowspan="4" valign="top"><img src="graphics/unconditional/instruments/' + instruments_names[idx] + '.png" height="100"/></th>';
-            tr += '<th>Input (Real)</th></tr>';
+            tr += '<th style="text-align: center"><img src="graphics/unconditional/instruments/' + instruments_names[idx] + '.png" height="100"/><br>Input (Real)</th></tr>';
             tr2 = '<tr><td style="text-align: center">' +
                 '<audio class="short-audio" src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_real.ogg" controls></audio>' +
                 '</td></tr>';
@@ -110,8 +109,7 @@ function load_speeches_files() {
             tr += '</tr>';
             $('#speeches_table').append(tr);
         } else {
-            tr = '<tr><th style="text-align: center" rowspan="4"><img src="graphics/unconditional/speeches/' + name + '.png" height="100"/></th>';
-            tr += '<th>Input (Real)</th></tr>';
+            tr = '<tr><th style="text-align: center"><img src="graphics/unconditional/speeches/' + name + '.png" height="100"/><br>Input (Real)</th></tr>';
             tr2 = '<tr><td><audio class="short-audio" src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_real.ogg" controls></audio></td></tr>';
             tr3 = '<tr><th>Fakes</th></tr>';
             tr4 = '<tr><td><audio class="short-audio" src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake1.ogg" controls></audio>';
@@ -164,7 +162,7 @@ function load_ambient_files() {
             tr += '</tr>';
             $('#ambient_table').append(tr);
         } else {
-            tr = '<tr><th style="text-align: center; width: 100px" rowspan="4">' + name + '</th><th>Input (Real)</th></tr>';
+            tr = '<tr><th style="text-align: center; width: 100px">' + name + '<hr>Input (Real)</th></tr>';
             tr2 = '<tr><td><audio class="short-audio" src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_real.ogg" controls></audio></td></tr>';
             tr3 = '<tr><th>Fakes</th></tr>';
             tr4 = '<tr><td><audio class="short-audio" src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake1.ogg" controls></audio>';
@@ -193,7 +191,7 @@ function create_rf_table() {
             tr += '</tr>';
             $("#rf_table").append(tr);
         } else {
-            tr = '<tr><th style="text-align: center; width: 100px" rowspan="8">' + lengths[i] + ' [sec] training length</th><th>Input (Real)</th></tr>';
+            tr = '<tr><th style="text-align: center; width: 100px">' + lengths[i] + ' [sec] training length<hr>Input (Real)</th></tr>';
             tr2 = '<tr><td><audio class="short-audio" src="' + audio_base_url + 'audio/rf/' + i + '_trump_real.ogg" controls></audio></td></tr>';
             tr3 = '<tr><th>Small Receptive Field<br>2[sec]-60[ms]</th></tr>';
             tr4 = '<tr><td style="text-align: center"><audio class="short-audio" src="' + audio_base_url + 'audio/rf/' + i + '_trump_small1_fake.ogg" controls></audio><br><audio class="short-audio" src="' + audio_base_url + 'audio/rf/' + i + '_trump_small2_fake.ogg" controls></audio></td></tr>';
@@ -238,7 +236,7 @@ function load_music_files() {
             tr += '</tr>';
             $('#music_table').append(tr);
         } else {
-            tr = '<tr><th style="text-align: center; width: 100px" rowspan="4">' + music_names[idx] + '<br><br>' + music_artists[idx] + '</th><th>Input (Real)</th></tr>';
+            tr = '<tr><th style="text-align: center; width: 100px">' + music_names[idx] + '<br><br>' + music_artists[idx] + '<hr>Input (Real)</th></tr>';
             tr2 = '<tr><td><audio class="short-audio" src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_real.ogg" controls></audio</td></tr>';
             tr3 = '<tr><th>Fakes</th></tr>';
             tr4 = '<tr><th><audio class="short-audio" src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_fake1.wav" controls></audio><audio class="short-audio" src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_fake2.wav" controls></audio></th></tr>';
@@ -263,7 +261,6 @@ function load_sr_files() {
             break
         }
         if (!is_small_screen) {
-            console.log('here')
             tr = '<tr><th colSpan="3" style="background-color: lightgrey; background-clip: padding-box">' + sr_files[idx] + '</th></tr>';
 
             tr2 = '<tr><td style="text-align: center">Input (Low Resolution)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_lr.png" width="300"></div>';
@@ -374,10 +371,10 @@ function load_inpainting_files() {
                 bg_color = 'white';
             }
             tr = '<tr><td>';
-            tr += '<table><tr><th style="background-color: ' + bg_color + '">Input</th><td style="background-color: ' + bg_color + '"><audio class="short-audio" src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-with_hole.ogg" controls></audio></td></tr>';
-            tr += '<tr><th style="background-color: ' + bg_color + '">GT</th><td style="background-color: ' + bg_color + '"><audio class="short-audio" src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-real.ogg" controls></audio></td></tr>';
-            tr += '<tr><th style="background-color: ' + bg_color + '">GACELA</th><td style="background-color: ' + bg_color + '"><audio class="short-audio" src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-gacela.ogg" controls></audio></td></tr>';
-            tr += '<tr><th style="background-color: ' + bg_color + '">Ours</th><td style="background-color: ' + bg_color + '"><audio class="short-audio" src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-ours.ogg" controls></audio></td></tr>';
+            tr += '<table><tr><th style="background-color: ' + bg_color + '">Input<br><audio class="short-audio" src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-with_hole.ogg" controls></audio></th></tr>';
+            tr += '<tr><th style="background-color: ' + bg_color + '">GT<br><audio class="short-audio" src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-real.ogg" controls></audio></th></tr>';
+            tr += '<tr><th style="background-color: ' + bg_color + '">GACELA<br><audio class="short-audio" src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-gacela.ogg" controls></audio></th></tr>';
+            tr += '<tr><th style="background-color: ' + bg_color + '">Ours<br><audio class="short-audio" src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-ours.ogg" controls></audio></th></tr>';
             tr += '</table></td></tr>';
             $('#inpainting_table_small').append(tr);
         }
@@ -417,8 +414,8 @@ function load_denoising_files() {
             txt += '<audio src="' + audio_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_real.ogg" id="denoising_real' + String(j) + '"></audio>';
             txt += '<audio muted src="' + audio_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_rec.ogg" id="denoising_rec' + String(j) + '"></audio>';
             txt += '</th></tr>';
-            txt += '<tr><td style="background-color: white"><div class="imgbox"><img class="center-fit" src="graphics/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_real.png" width="400"></div>';
-            txt += '<div class="imgbox"><img class="center-fit" src="graphics/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_rec.png" width="400"></div>';
+            txt += '<tr><td style="background-color: white"><div class="imgbox"><img class="center-fit" src="graphics/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_real.png" width="300"></div>';
+            txt += '<div class="imgbox"><img class="center-fit" src="graphics/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_rec.png" width="300"></div>';
             txt += '<div id="denoising_label' + String(j) + '">Noisy</div><br><button id="denoising_play' + String(j) + '">Play/Pause</button><button id="denoising_switch' + String(j) + '">Switch</button>';
             txt += '</td></tr>';
             $('#denoising_table_small').append(txt);
@@ -454,7 +451,75 @@ function load_denoising_files() {
             }
         })
     }
+}
 
+function load_denoising_synth_files() {
+    var denoising_synth_files = [ 'white_5', 'white_10', 'gramophone_5', 'gramophone_10']
+    var denoising_synth_files_headlines = ['White Noise (5dB->9.78dB)', 'White Noise (10dB->11.53dB)', 'Gramophone Noise (5dB->6.89dB)', 'Gramophone Noise (10dB->11.56dB)']
+    var noisy_audios = [];
+    var rec_audios = [];
+    var play_buttons = [];
+    var switch_buttons = [];
+    var labels = [];
+    var is_playing = [];
+    var is_small_screen = $('#denoising_synth_table').parent().css('display') == 'none';
+    for (var j = 0; j < denoising_synth_files.length; j++) {
+        if (!is_small_screen) {
+            txt = '<tr>';
+            txt += '<th style="text-align: center" colspan="3">'+denoising_synth_files_headlines[j];
+            txt += '<audio src="' + audio_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_noisy.ogg" id="denoising_synth_noisy' + String(j) + '"></audio>';
+            txt += '<audio muted src="' + audio_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_rec.ogg" id="denoising_synth_rec' + String(j) + '"></audio>';
+            txt += '</th>';
+            txt += '</tr>';
+            txt += '<tr>';
+            txt += '<td><div class="imgbox"><img class="center-fit" src="graphics/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_noisy.png" height="200"></div></td>';
+            txt += '<td><div class="imgbox"><img class="center-fit" src="graphics/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_rec.png" height="200"></div></td>';
+            txt += '<td><div id="denoising_synth_label' + String(j) + '">Noisy</div><br><button id="denoising_synth_play' + String(j) + '">Play/Pause</button><button id="denoising_synth_switch' + String(j) + '">Switch</button></td>';
+            txt += '</tr>';
+            $('#denoising_synth_table').append(txt);
+        } else {
+            txt = '<tr>';
+            txt += '<th style="text-align: center; background-color: #f1f1f1" colspan="3">'+denoising_synth_files_headlines[j];
+            txt += '<audio src="' + audio_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_noisy.ogg" id="denoising_synth_real' + String(j) + '"></audio>';
+            txt += '<audio muted src="' + audio_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_rec.ogg" id="denoising_synth_rec' + String(j) + '"></audio>';
+            txt += '</th></tr>';
+            txt += '<tr><td style="background-color: white"><div class="imgbox"><img class="center-fit" src="graphics/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_noisy.png" width="300"></div>';
+            txt += '<div class="imgbox"><img class="center-fit" src="graphics/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_rec.png" width="300"></div>';
+            txt += '<div id="denoising_synth_label' + String(j) + '">Noisy</div><br><button id="denoising_synth_play' + String(j) + '">Play/Pause</button><button id="denoising_synth_switch' + String(j) + '">Switch</button>';
+            txt += '</td></tr>';
+            $('#denoising_synth_table_small').append(txt);
+        }
+        noisy_audios.push($("#denoising_synth_noisy" + String(j)));
+        rec_audios.push($("#denoising_synth_rec" + String(j)));
+        play_buttons.push($("#denoising_synth_play" + String(j)));
+        switch_buttons.push($("#denoising_synth_switch" + String(j)));
+        is_playing.push(false);
+        labels.push($("#denoising_synth_label" + String(j)));
+        play_buttons[j].click(function () {
+            var idx = parseInt(this.id[this.id.length - 1]);
+            if (!is_playing[idx]) {
+                noisy_audios[idx][0].play();
+                rec_audios[idx][0].play();
+                is_playing[idx] = true
+            } else {
+                noisy_audios[idx][0].pause();
+                rec_audios[idx][0].pause();
+                is_playing[idx] = false
+            }
+        });
+        switch_buttons[j].click(function () {
+            var idx = parseInt(this.id[this.id.length - 1]);
+            if (noisy_audios[idx][0].muted) {
+                noisy_audios[idx].prop("muted", false);
+                rec_audios[idx].prop("muted", true);
+                labels[idx].text('Noisy')
+            } else {
+                noisy_audios[idx].prop("muted", true);
+                rec_audios[idx].prop("muted", false);
+                labels[idx].text('Denoised')
+            }
+        })
+    }
 }
 
 function load_limitations_files() {
@@ -600,10 +665,37 @@ $(document).ready(function () {
         denoising_urls = data.split('\n')[1].split(',');
         load_denoising_files()
     });
+    load_denoising_synth_files()
 
     // Limitations
     $.get('limitations_files.dat', function (data) {
         limitations_files = data.split('\n')[0].split(',');
         load_limitations_files()
     });
+
+
+    // highlight link of currently shown section
+    // $(window).scroll(function () {
+    //     var
+    //         unconditional_position = $('#unconditional').offset().top,
+    //         music_position = $('#music').offset().top,
+    //         be_position = $('#be').offset().top,
+    //         inpainting_position = $('#inpainting').offset().top,
+    //         denoising_position = $('#denoising').offset().top,
+    //         limitations_position = $('#limitations').offset().top,
+    //         window_height = $(window).height(),
+    //         cur_position = $(this).scrollTop();
+    //     var positions = [unconditional_position, music_position, be_position, inpainting_position, denoising_position, limitations_position];
+    //     var sections = ['#unconditional', '#music', '#be', '#inpainting', '#denoising', '#limitations'];
+    //     var index = positions.findIndex(function (number) {
+    //         return number >= cur_position;
+    //     });
+    //     for (var i = 0; i < sections.length; i++) {
+    //         if (i == index) {
+    //             $(sections[i]+'_link').addClass('w3-white');
+    //         } else {
+    //             $(sections[i]+'_link').removeClass('w3-white');
+    //         }
+    //     }
+    // });
 });

@@ -154,7 +154,7 @@ def calc_receptive_field(filter_size, dilation_factors, Fs=None):
         return (filter_size * dilation_factors[0] + sum(dilation_factors[1:]) * (filter_size - 1)) / Fs * 1e3
 
 
-def resample_sig(params, input_signal, orig_fs=None, target_fs=None, scale=None, allow_aliasing=False):
+def resample_sig(params, input_signal, orig_fs=None, target_fs=None):
     if not hasattr(params, 'resamplers') or type(params.resamplers) == str:
         params.resamplers = {}
     if (orig_fs, target_fs) in params.resamplers.keys() and params.resamplers[(orig_fs, target_fs)].in_shape[2] == \
