@@ -2,7 +2,7 @@
 
 [Project Website](https://galgreshler.github.io/Catch-A-Waveform/) | [Paper](https://arxiv.org/pdf/2106.06426.pdf)
 
-### Official pytorch implementation of the paper: "Catch-A-Waveform: Learning to Generate Audio from a Single Short Example"
+### Official pytorch implementation of the paper: "Catch-A-Waveform: Learning to Generate Audio from a Single Short Example" (NeurIPS 2021)
 
 ## Generate audio from a single audio input
 
