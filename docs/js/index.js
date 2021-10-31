@@ -262,7 +262,6 @@ function load_sr_files() {
         }
         if (!is_small_screen) {
             tr = '<tr><th colSpan="3" style="background-color: lightgrey; background-clip: padding-box">' + sr_files[idx] + '</th></tr>';
-
             tr2 = '<tr><td style="text-align: center">Input (Low Resolution)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_lr.png" width="300"></div>';
             tr2 += '<audio src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_lr.ogg" controls></audio></td>';
             tr2 += '<td style="text-align: center">GT (High-Resolution)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_gt.png" width="300"></div>';
@@ -357,7 +356,7 @@ function load_inpainting_files() {
             break
         }
         if (!is_small_screen) {
-            tr += '<tr>';
+            tr = '<tr>';
             tr += '<td><audio class="short-audio" src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-with_hole.ogg" controls></audio></td>';
             tr += '<td><audio class="short-audio" src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-real.ogg" controls></audio></td>';
             tr += '<td><audio class="short-audio" src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-gacela.ogg" controls></audio></td>';
