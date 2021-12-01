@@ -13,15 +13,21 @@ if __name__ == '__main__':
     parser.add_argument('--condition',
                         help='Condition the generated signals on the lowest scale of input, to enforce general structure',
                         default=False, action='store_true')
+    parser.add_argument('--reconstruct',
+                        help='Generate the reconstruction of the signal',
+                        default=False, action='store_true')
 
     args = parser.parse_args()
 
     audio_generator = AudioGenerator(os.path.join('outputs', args.input_folder))
-    if args.condition:
-        condition_signal, condition_fs = librosa.load(
-            os.path.join(audio_generator.output_folder, 'real@%dHz.wav' % audio_generator.params.fs_list[0]), sr=None)
-        condition = {'condition_signal': condition_signal, 'name': 'self', 'condition_fs': condition_fs}
-        audio_generator.condition(condition)
+    if args.reconstruct:
+        audio_generator.reconstruct()
     else:
-        audio_generator.generate(nSignals=args.n_signals, length=args.length,
-                                 generate_all_scales=args.generate_all_scales)
+        if args.condition:
+            condition_signal, condition_fs = librosa.load(
+                os.path.join(audio_generator.output_folder, 'real@%dHz.wav' % audio_generator.params.fs_list[0]), sr=None)
+            condition = {'condition_signal': condition_signal, 'name': 'self', 'condition_fs': condition_fs}
+            audio_generator.condition(condition)
+        else:
+            audio_generator.generate(nSignals=args.n_signals, length=args.length,
+                                     generate_all_scales=args.generate_all_scales)

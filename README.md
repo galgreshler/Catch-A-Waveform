@@ -108,6 +108,14 @@ python inpaint.py --input_folder <model_folder_name>
 
 You can create different inpainting realization by adding the `--new` flag.
 
+### Denoising
+
+The denoised signal is just the reconstructed signal, so after training on a noisy signal, simply run:
+
+```
+python generate_main.py --input_folder <model_folder_name> --reconstruct
+```
+
 ## Run examples
 
 ### Unconditional Generation
@@ -160,7 +168,12 @@ python train_main.py --input_file JosephJoachim_BachAdagio_1904 --run_mode denoi
 
 Here we set the `init_sample_rate` to be 10KHz (default is 16Khz) since the old recording has limited bandwidth.
 
-### Citation
+## Pretrained Models
+Instead of running the examples yourself, you can download the pretrained generators and just perform inference. After downloaing the folders, put them inside `outputs` folder and run inference.
+
+The models can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1JN2QVmuKU2rCe1nAJ7jw6DsXb4F6AKpH?usp=sharing).
+
+## Citation
 
 If you use this code in your research, please cite our paper:
 

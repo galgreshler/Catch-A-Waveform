@@ -1,4 +1,5 @@
 import argparse
+import os
 
 from generating import AudioGenerator
 
@@ -9,5 +10,5 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    audio_generator = AudioGenerator(args['input_folder'])
-    audio_generator.inpaint(new_noise=args['new'])
+    audio_generator = AudioGenerator(os.path.join('outputs', args.input_folder))
+    audio_generator.inpaint(new_noise=args.new)
