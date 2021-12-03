@@ -266,7 +266,7 @@ function load_sr_files() {
             tr2 = '<tr><td style="text-align: center">Input (Low Resolution)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_lr.png" width="300"></div>';
             tr2 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_lr.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_lr.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
             tr2 += '<td style="text-align: center">GT (High-Resolution)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_gt.png" width="300"></div>';
-            tr2 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_gt.ogg" type="audio/ogg"><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_gt.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr2 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_gt.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_gt.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
             tr2 += '<td style="text-align: center">Our Training Signal<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_training.png" width="300"></div>';
             tr2 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_training.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_training.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
 
