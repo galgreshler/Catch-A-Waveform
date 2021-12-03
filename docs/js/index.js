@@ -38,16 +38,16 @@ function load_instruments_files() {
             tr = '<tr>';
             tr += '<th style="text-align: center"><img src="graphics/unconditional/instruments/' + instruments_names[idx] + '.png" height="100"/></th>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake1.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake1.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake2.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake2.' + aws_file_type + '" type="audio/'+ aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake2.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake2.' + aws_file_type + '" type="audio/'+ aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake3.ogg"  type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake3.' + aws_file_type + '"  type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake3.ogg"  type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake3.' + aws_file_type + '"  type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '</tr>';
             $('#instruments_table').append(tr);
@@ -55,13 +55,13 @@ function load_instruments_files() {
             tr = '<tr>';
             tr += '<th style="text-align: center"><img src="graphics/unconditional/instruments/' + instruments_names[idx] + '.png" height="100"/><br>Input (Real)</th></tr>';
             tr2 = '<tr><td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td></tr>';
             tr3 = '<tr><th>Fakes</th></tr>';
             tr4 = '<tr><td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake1.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
-            tr4 += '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake2.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
-            tr4 += '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake3.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake3.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake1.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+            tr4 += '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake2.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+            tr4 += '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake3.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake3.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
             tr4 += '</td></tr>';
             $('#instruments_table_small').append(tr);
             $('#instruments_table_small').append(tr2);
@@ -95,27 +95,27 @@ function load_speeches_files() {
             tr = '<tr>';
             tr += '<th style="text-align: center"><img src="graphics/unconditional/speeches/' + name + '.png" height="100"/></th>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_real.ogg" type="audio/ogg">><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_real.ogg" type="audio/ogg">><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake1.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake1.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake2.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake2.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake3.ogg" type="audio/ogg"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake3.ogg" type="audio/ogg"></audio>' +
                 '</td>';
 
             tr += '</tr>';
             $('#speeches_table').append(tr);
         } else {
             tr = '<tr><th style="text-align: center"><img src="graphics/unconditional/speeches/' + name + '.png" height="100"/><br>Input (Real)</th></tr>';
-            tr2 = '<tr><td><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr2 = '<tr><td><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             tr3 = '<tr><th>Fakes</th></tr>';
-            tr4 = '<tr><td><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake1.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
-            tr4 += '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake2.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
-            tr4 += '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake3.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake3.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>'
+            tr4 = '<tr><td><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake1.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+            tr4 += '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake2.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+            tr4 += '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake3.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake3.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>'
             $('#speeches_table_small').append(tr);
             $('#speeches_table_small').append(tr2);
             $('#speeches_table_small').append(tr3);
@@ -148,27 +148,27 @@ function load_ambient_files() {
             tr = '<tr>';
             tr += '<th style="text-align: center; width: 100px">' + name + '</th>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake1.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake1.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake2.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake2.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake3.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake3.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake3.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake3.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
 
             tr += '</tr>';
             $('#ambient_table').append(tr);
         } else {
             tr = '<tr><th style="text-align: center; width: 100px">' + name + '<hr>Input (Real)</th></tr>';
-            tr2 = '<tr><td><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr2 = '<tr><td><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             tr3 = '<tr><th>Fakes</th></tr>';
-            tr4 = '<tr><td><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake1.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
-            tr4 += '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake2.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
-            tr4 += '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake3.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake3.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr4 = '<tr><td><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake1.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+            tr4 += '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake2.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+            tr4 += '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake3.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/ambient/' + ambient_files[idx] + '_fake3.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             $('#ambient_table_small').append(tr);
             $('#ambient_table_small').append(tr2);
             $('#ambient_table_small').append(tr3);
@@ -185,21 +185,21 @@ function create_rf_table() {
         if (!is_small_screen) {
             tr = '<tr>';
             tr += '<td style="text-align: center; width: 100px">' + lengths[i] + '</td>';
-            tr += '<td style="text-align: center"><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
-            tr += '<td style="text-align: center"><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_small1_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_small1_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><br><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_small2_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_small2_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
-            tr += '<td style="text-align: center"><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_normal1_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_normal1_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><br><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_normal2_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_normal2_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
-            tr += '<td style="text-align: center"><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_large1_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_large1_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><br><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_large2_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_large2_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr += '<td style="text-align: center"><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr += '<td style="text-align: center"><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_small1_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_small1_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><br><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_small2_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_small2_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr += '<td style="text-align: center"><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_normal1_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_normal1_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><br><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_normal2_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_normal2_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr += '<td style="text-align: center"><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_large1_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_large1_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><br><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_large2_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_large2_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
             tr += '</tr>';
             $("#rf_table").append(tr);
         } else {
             tr = '<tr><th style="text-align: center; width: 100px">' + lengths[i] + ' [sec] training length<hr>Input (Real)</th></tr>';
-            tr2 = '<tr><td><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr2 = '<tr><td><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             tr3 = '<tr><th>Small Receptive Field<br>2[sec]-60[ms]</th></tr>';
-            tr4 = '<tr><td style="text-align: center"><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_small1_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_small1_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><br><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_small2_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_small2_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr4 = '<tr><td style="text-align: center"><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_small1_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_small1_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><br><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_small2_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_small2_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             tr5 = '<tr><th>Normal Receptive Field<br>4[sec]-120[ms]</th></tr>';
-            tr6 = '<tr><td style="text-align: center"><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_normal1_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_normal1_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><br><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_normal2_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_normal2_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr6 = '<tr><td style="text-align: center"><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_normal1_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_normal1_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><br><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_normal2_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_normal2_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             tr7 = '<tr><th>Small Receptive Field<br>2[sec]-60[ms]</th></tr>';
-            tr8 = '<tr><td style="text-align: center"><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_large1_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_large1_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><br><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_large2_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_large2_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr8 = '<tr><td style="text-align: center"><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_large1_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_large1_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><br><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/rf/' + i + '_trump_large2_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/rf/' + i + '_trump_large2_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             $("#rf_table_small").append(tr);
             $("#rf_table_small").append(tr2);
             $("#rf_table_small").append(tr3);
@@ -226,21 +226,21 @@ function load_music_files() {
             tr += '<th style="text-align: center; width: 175px">' + music_names[idx] + '</th>';
             tr += '<th style="text-align: center; width: 175px">' + music_artists[idx] + '</th>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/music/' + music_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/music/' + music_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_fake1.wav" type="audio/wav"><source src="' + aws_base_url + 'audio/music/' + music_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_fake1.wav" type="audio/wav"><source src="' + aws_base_url + 'audio/music/' + music_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_fake2.wav" type="audio/wav"><source src="' + aws_base_url + 'audio/music/' + music_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_fake2.wav" type="audio/wav"><source src="' + aws_base_url + 'audio/music/' + music_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '</tr>';
             $('#music_table').append(tr);
         } else {
             tr = '<tr><th style="text-align: center; width: 100px">' + music_names[idx] + '<br><br>' + music_artists[idx] + '<hr>Input (Real)</th></tr>';
-            tr2 = '<tr><td><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/music/' + music_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio</td></tr>';
+            tr2 = '<tr><td><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/music/' + music_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio</td></tr>';
             tr3 = '<tr><th>Fakes</th></tr>';
-            tr4 = '<tr><th><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_fake1.wav" type="audio/wav"><source src="' + aws_base_url + 'audio/music/' + music_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_fake2.wav" type="audio/wav"><source src="' + aws_base_url + 'audio/music/' + music_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></th></tr>';
+            tr4 = '<tr><th><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_fake1.wav" type="audio/wav"><source src="' + aws_base_url + 'audio/music/' + music_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/music/' + music_files[idx] + '_fake2.wav" type="audio/wav"><source src="' + aws_base_url + 'audio/music/' + music_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></th></tr>';
             $('#music_table_small').append(tr);
             $('#music_table_small').append(tr2);
             $('#music_table_small').append(tr3);
@@ -264,35 +264,35 @@ function load_sr_files() {
         if (!is_small_screen) {
             tr = '<tr><th colSpan="3" style="background-color: lightgrey; background-clip: padding-box">' + sr_files[idx] + '</th></tr>';
             tr2 = '<tr><td style="text-align: center">Input (Low Resolution)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_lr.png" width="300"></div>';
-            tr2 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_lr.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_lr.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr2 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_lr.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_lr.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
             tr2 += '<td style="text-align: center">GT (High-Resolution)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_gt.png" width="300"></div>';
-            tr2 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_gt.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_gt.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr2 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_gt.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_gt.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
             tr2 += '<td style="text-align: center">Our Training Signal<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_training.png" width="300"></div>';
-            tr2 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_training.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_training.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr2 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_training.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_training.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
 
             tr3 = '<tr><td style="text-align: center">TFiLM (single)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_pr_single.png" width="300"></div>';
-            tr3 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_pr_single.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_pr_single.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr3 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_pr_single.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_pr_single.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
             tr3 += '<td style="text-align: center">TFiLM (multi)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_pr_multi.png" width="300"></div>';
-            tr3 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_pr_multi.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_pr_multi.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr3 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_pr_multi.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_pr_multi.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
             tr3 += '<td style="text-align: center">Ours<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_ours.png" width="300"></div>';
-            tr3 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_ours.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_ours.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr3 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_ours.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_ours.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             $('#sr_table').append(tr);
             $('#sr_table').append(tr2);
             $('#sr_table').append(tr3);
         } else {
             tr = '<tr><th colSpan="3" style="background-color: lightgrey; background-clip: padding-box">' + sr_files[idx] + '</th></tr>';
             tr2 = '<tr><td style="text-align: center; background-color: white">Input (Low Resolution)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_lr.png" width="300"></div>';
-            tr2 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_lr.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_lr.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr2 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_lr.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_lr.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             tr2 += '<tr><td style="text-align: center; background-color: white">GT (High-Resolution)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_gt.png" width="300"></div>';
-            tr2 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_gt.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_gt.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr2 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_gt.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_gt.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             tr2 += '<tr><td style="text-align: center; background-color: white">Our Training Signal<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_training.png" width="300"></div>';
-            tr2 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_training.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_training.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr2 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_training.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_training.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             tr3 = '<tr><td style="text-align: center; background-color: white">TFiLM (single)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_pr_single.png" width="300"></div>';
-            tr3 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_pr_single.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_pr_single.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr3 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_pr_single.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_pr_single.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
             tr3 += '<tr><td style="text-align: center; background-color: white">TFiLM (multi)<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_pr_multi.png" width="300"></div>';
-            tr3 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_pr_multi.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_pr_multi.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr3 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_pr_multi.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_pr_multi.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             tr3 += '<tr><td style="text-align: center; background-color: white">Ours<div className="imgbox"><img className="center-fit" src="graphics/sr/' + sr_files[idx] + '_ours.png" width="300"></div>';
-            tr3 += '<audio controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_ours.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_ours.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr3 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr/' + sr_files[idx] + '_ours.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr/' + sr_files[idx] + '_ours.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             $('#sr_table_small').append(tr);
             $('#sr_table_small').append(tr2);
             $('#sr_table_small').append(tr3);
@@ -316,26 +316,26 @@ function load_sr_files_8() {
         if (!is_small_screen) {
             tr = '<tr><th colSpan="4" style="background-color: lightgrey; background-clip: padding-box">' + sr_files_8[idx] + '</th></tr>';
             tr2 = '<tr><td style="text-align: center">Input (Low Resolution)<div className="imgbox"><img className="center-fit" src="graphics/sr_8_to_16/' + sr_files_8[idx] + '_lr.png" width="300"></div>';
-            tr2 += '<audio controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_lr.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_lr.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr2 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_lr.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_lr.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
             tr2 += '<td style="text-align: center">GT (High-Resolution)<div className="imgbox"><img className="center-fit" src="graphics/sr_8_to_16/' + sr_files_8[idx] + '_gt.png" width="300"></div>'
-            tr2 += '<audio controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_gt.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_gt.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr2 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_gt.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_gt.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             tr3 = '<tr><td style="text-align: center">Our Training Signal<div className="imgbox"><img className="center-fit" src="graphics/sr_8_to_16/' + sr_files_8[idx] + '_training.png" width="300"></div>'
-            tr3 += '<audio controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_training.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_training.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr3 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_training.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_training.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
             tr3 += '<td style="text-align: center">Extended<div className="imgbox"><img className="center-fit" src="graphics/sr_8_to_16/' + sr_files_8[idx] + '_ours.png" width="300"></div>'
-            tr3 += '<audio controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_ours.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_ours.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr3 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_ours.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_ours.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             $('#sr_table_8_to_16').append(tr);
             $('#sr_table_8_to_16').append(tr2);
             $('#sr_table_8_to_16').append(tr3);
         } else {
             tr = '<tr><th colSpan="4" style="background-color: lightgrey; background-clip: padding-box">' + sr_files_8[idx] + '</th></tr>';
             tr2 = '<tr><td style="text-align: center">Input (Low Resolution)<div className="imgbox"><img className="center-fit" src="graphics/sr_8_to_16/' + sr_files_8[idx] + '_lr.png" width="300"></div>';
-            tr2 += '<audio controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_lr.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_lr.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr2 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_lr.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_lr.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             tr2 += '<tr><td style="text-align: center">GT (High-Resolution)<div className="imgbox"><img className="center-fit" src="graphics/sr_8_to_16/' + sr_files_8[idx] + '_gt.png" width="300"></div>';
-            tr2 += '<audio controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_gt.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_gt.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr></tr>';
+            tr2 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_gt.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_gt.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr></tr>';
             tr3 = '<tr><td style="text-align: center">Our Training Signal<div className="imgbox"><img className="center-fit" src="graphics/sr_8_to_16/' + sr_files_8[idx] + '_training.png" width="300"></div>';
-            tr3 += '<audio controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_training.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_training.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr3 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_training.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_training.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             tr3 += '<tr><td style="text-align: center">Extended<div className="imgbox"><img className="center-fit" src="graphics/sr_8_to_16/' + sr_files_8[idx] + '_ours.png" width="300"></div>';
-            tr3 += '<audio controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_ours.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_ours.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
+            tr3 += '<audio preload="metadata" controls><source src="' + audio_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_ours.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/sr_8_to_16/' + sr_files_8[idx] + '_ours.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td></tr>';
             $('#sr_table_8_to_16_small').append(tr);
             $('#sr_table_8_to_16_small').append(tr2);
             $('#sr_table_8_to_16_small').append(tr3);
@@ -358,10 +358,10 @@ function load_inpainting_files() {
         }
         if (!is_small_screen) {
             tr = '<tr>';
-            tr += '<td><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-with_hole.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-with_hole.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
-            tr += '<td><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
-            tr += '<td><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-gacela.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-gacela.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
-            tr += '<td><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-ours.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-ours.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr += '<td><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-with_hole.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-with_hole.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr += '<td><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr += '<td><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-gacela.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-gacela.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
+            tr += '<td><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-ours.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-ours.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></td>';
             tr += '</tr>';
             $('#inpainting_table').append(tr);
         } else {
@@ -371,10 +371,10 @@ function load_inpainting_files() {
                 bg_color = 'white';
             }
             tr = '<tr><td>';
-            tr += '<table><tr><th style="background-color: ' + bg_color + '">Input<br><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-with_hole.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-with_hole.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></th></tr>';
-            tr += '<tr><th style="background-color: ' + bg_color + '">GT<br><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></th></tr>';
-            tr += '<tr><th style="background-color: ' + bg_color + '">GACELA<br><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-gacela.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-gacela.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></th></tr>';
-            tr += '<tr><th style="background-color: ' + bg_color + '">Ours<br><audio class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-ours.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-ours.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></th></tr>';
+            tr += '<table><tr><th style="background-color: ' + bg_color + '">Input<br><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-with_hole.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-with_hole.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></th></tr>';
+            tr += '<tr><th style="background-color: ' + bg_color + '">GT<br><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></th></tr>';
+            tr += '<tr><th style="background-color: ' + bg_color + '">GACELA<br><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-gacela.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-gacela.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></th></tr>';
+            tr += '<tr><th style="background-color: ' + bg_color + '">Ours<br><audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-ours.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/inpainting/' + inpainting_files[idx] + '-ours.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio></th></tr>';
             tr += '</table></td></tr>';
             $('#inpainting_table_small').append(tr);
         }
@@ -398,8 +398,8 @@ function load_denoising_files() {
         if (!is_small_screen) {
             txt = '<tr>';
             txt += '<th style="text-align: center" colspan="3"><a href="' + denoising_urls[j] + '" target="_blank">' + denoising_files[j] + '</a>';
-            txt += '<audio id="denoising_real' + String(j) + '" ><source src="' + audio_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
-            txt += '<audio muted id="denoising_rec' + String(j) + '" ><source src="' + audio_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_rec.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_rec.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+            txt += '<audio preload="metadata" id="denoising_real' + String(j) + '" ><source src="' + audio_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+            txt += '<audio preload="metadata" muted id="denoising_rec' + String(j) + '" ><source src="' + audio_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_rec.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_rec.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
             txt += '</th>';
             txt += '</tr>';
             txt += '<tr>';
@@ -411,8 +411,8 @@ function load_denoising_files() {
         } else {
             txt = '<tr>';
             txt += '<th style="text-align: center; background-color: #f1f1f1" colspan="3"><a href="' + denoising_urls[j] + '" target="_blank">' + denoising_files[j] + '</a>';
-            txt += '<audio id="denoising_real' + String(j) + '" ><source src="' + audio_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
-            txt += '<audio muted id="denoising_rec' + String(j) + '" ><source src="' + audio_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_rec.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_rec.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+            txt += '<audio preload="metadata" id="denoising_real' + String(j) + '" ><source src="' + audio_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+            txt += '<audio preload="metadata" muted id="denoising_rec' + String(j) + '" ><source src="' + audio_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_rec.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_rec.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
             txt += '</th></tr>';
             txt += '<tr><td style="background-color: white"><div class="imgbox"><img class="center-fit" src="graphics/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_real.png" width="300"></div>';
             txt += '<div class="imgbox"><img class="center-fit" src="graphics/denoising/' + denoising_files[j].replaceAll(' ', '_') + '_rec.png" width="300"></div>';
@@ -467,8 +467,8 @@ function load_denoising_synth_files() {
         if (!is_small_screen) {
             txt = '<tr>';
             txt += '<th style="text-align: center" colspan="3">' + denoising_synth_files_headlines[j];
-            txt += '<audio id="denoising_synth_noisy' + String(j) + '"><source src="' + audio_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_noisy.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_noisy.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
-            txt += '<audio muted id="denoising_synth_rec' + String(j) + '" ><source src="' + audio_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_rec.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_rec.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+            txt += '<audio preload="metadata" id="denoising_synth_noisy' + String(j) + '"><source src="' + audio_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_noisy.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_noisy.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+            txt += '<audio preload="metadata" muted id="denoising_synth_rec' + String(j) + '" ><source src="' + audio_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_rec.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_rec.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
             txt += '</th>';
             txt += '</tr>';
             txt += '<tr>';
@@ -480,8 +480,8 @@ function load_denoising_synth_files() {
         } else {
             txt = '<tr>';
             txt += '<th style="text-align: center; background-color: #f1f1f1" colspan="3">' + denoising_synth_files_headlines[j];
-            txt += '<audio id="denoising_synth_real' + String(j) + '"><source src="' + audio_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_noisy.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_noisy.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
-            txt += '<audio muted id="denoising_synth_rec' + String(j) + '"><source src="' + audio_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_rec.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_rec.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+            txt += '<audio preload="metadata" id="denoising_synth_real' + String(j) + '"><source src="' + audio_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_noisy.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_noisy.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
+            txt += '<audio preload="metadata" muted id="denoising_synth_rec' + String(j) + '"><source src="' + audio_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_rec.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_rec.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>';
             txt += '</th></tr>';
             txt += '<tr><td style="background-color: white"><div class="imgbox"><img class="center-fit" src="graphics/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_noisy.png" width="300"></div>';
             txt += '<div class="imgbox"><img class="center-fit" src="graphics/denoising_synth/' + denoising_synth_files[j].replaceAll(' ', '_') + '_rec.png" width="300"></div>';
@@ -533,10 +533,10 @@ function load_limitations_files() {
         if (!is_small_screen) {
             tr = '<tr>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/limitations/' + limitations_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/limitations/' + limitations_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/limitations/' + limitations_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/limitations/' + limitations_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/limitations/' + limitations_files[idx] + '_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/limitations/' + limitations_files[idx] + '_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/limitations/' + limitations_files[idx] + '_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/limitations/' + limitations_files[idx] + '_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td>' + explanations[idx] + '</td>';
             tr += '</tr>';
@@ -545,11 +545,11 @@ function load_limitations_files() {
             tr = '<tr>';
             tr += '<th>Real (Input)</th>';
             tr += '<tr><td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/limitations/' + limitations_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/limitations/' + limitations_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/limitations/' + limitations_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/limitations/' + limitations_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td></tr>';
             tr += '<th>Fake</th>';
             tr += '<tr><td style="text-align: center">' +
-                '<audio class="short-audio" controls><source src="' + audio_base_url + 'audio/limitations/' + limitations_files[idx] + '_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/limitations/' + limitations_files[idx] + '_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><br>' + explanations[idx] +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/limitations/' + limitations_files[idx] + '_fake.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/limitations/' + limitations_files[idx] + '_fake.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio><br>' + explanations[idx] +
                 '</td></tr>';
             $('#limitations_table_small').append(tr);
         }
