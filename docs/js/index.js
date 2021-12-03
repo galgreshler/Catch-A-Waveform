@@ -105,7 +105,7 @@ function load_speeches_files() {
                 '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake2.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake2.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td style="text-align: center">' +
-                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake3.ogg" type="audio/ogg"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake3.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/speeches/' + speeches_files[idx] + '_fake3.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
 
             tr += '</tr>';
