@@ -22,7 +22,8 @@ var number_of_music_files = 0;
 var number_of_ambient_files = 0;
 var number_of_limitations_files = 0;
 var audio_base_url = '';
-var aws_base_url = 'https://catch-a-waveform.s3-us-west-2.amazonaws.com/';
+// var aws_base_url = 'https://catch-a-waveform.s3-us-west-2.amazonaws.com/';
+var aws_base_url = 'flac_';
 var aws_file_type = 'flac';
 
 // load audio files and create tables
@@ -38,7 +39,7 @@ function load_instruments_files() {
             tr = '<tr>';
             tr += '<th style="text-align: center"><img src="graphics/unconditional/instruments/' + instruments_names[idx] + '.png" height="100"/></th>';
             tr += '<td style="text-align: center">' +
-                '<audio preload="metadata" preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
+                '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_real.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_real.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
                 '</td>';
             tr += '<td style="text-align: center">' +
                 '<audio preload="metadata" class="short-audio" controls><source src="' + audio_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake1.ogg" type="audio/ogg"><source src="' + aws_base_url + 'audio/unconditional/instruments/' + instruments_files[idx] + '_fake1.' + aws_file_type + '" type="audio/' + aws_file_type + '"></audio>' +
