@@ -15,7 +15,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     file_name = args.lr_signal.split('.')
-    audio_generator = AudioGenerator(os.path.join('OutputsOld', args.input_folder))
+    audio_generator = AudioGenerator(os.path.join('outputs', args.input_folder))
     if len(file_name) < 2:
         args.lr_signal = '.'.join([args.lr_signal, 'wav'])
 
