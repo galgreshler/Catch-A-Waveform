@@ -189,7 +189,7 @@ def get_input_signal(params):
                                            offset=params.segments_to_train[idx],
                                            duration=params.segments_to_train[idx + 1] - params.segments_to_train[idx])
             else:
-                _samples, _ = librosa.load(params.input_path, sr=None,
+                _samples, _ = librosa.load(os.path.join('inputs', params.input_path), sr=None,
                                            offset=params.segments_to_train[idx],
                                            duration=params.segments_to_train[idx + 1] - params.segments_to_train[
                                                idx])
