@@ -32,10 +32,15 @@ class ConvBlock(nn.Sequential):
             filter_size = params.filter_size
         if mask is not None:
             self.mask_in = mask
+            self.mask_out = []
             self.rf = int((params.filter_size - 1) * dilation)
-            self.mask_out = torch.zeros(self.mask_in.shape)
-            self.mask_out[0] = int(mask[0] - self.rf)
-            self.mask_out[1] = int(mask[1])
+            for hole in self.mask_in:
+                self.mask_out.append([hole[0] - self.rf, hole[1]])
+            # ???
+            for idx in range(len(self.mask_out) - 1):
+                if self.mask_out[idx+1][0] < self.mask_out[idx][1]:
+                    self.mask_out[idx+1][0] = self.mask_out[idx][1] + 1
+
         else:
             self.mask_out = None
         self.conv = NormConv1d(in_channels, out_channels, filter_size, dilation=dilation)
@@ -45,11 +50,23 @@ class ConvBlock(nn.Sequential):
     def forward(self, x, use_mask=False):
         out_conv = self.conv(x)
         if use_mask:
-            tmp = torch.cat((out_conv[:, :, :int(self.mask_out[0])], out_conv[:, :, int(self.mask_out[1] + 1):]), dim=2)
+            #tmp = torch.cat((out_conv[:, :, :int(self.mask_out[0][0])], out_conv[:, :, int(self.mask_out[0][1] + 1):]), dim=2)
+            tmp = out_conv[:, :, :int(self.mask_out[0][0])].clone()
+            cut_idx = []
+            cut_idx.append(tmp.shape[2])
+            for idx in range(len(self.mask_out)-1):
+                tmp = torch.cat((tmp, out_conv[:, :, int(self.mask_out[idx][1] + 1):int(self.mask_out[idx+1][0])]), dim=2)
+                cut_idx.append(tmp.shape[2])
+            tmp = torch.cat((tmp, out_conv[:, :, int(self.mask_out[-1][1] + 1):]), dim=2)
+
             tmp_norm = self.norm(tmp)
             out_norm = out_conv
-            out_norm[:, :, :int(self.mask_out[0])] = tmp_norm[:, :, :int(self.mask_out[0])]
-            out_norm[:, :, int(self.mask_out[1] + 1):] = tmp_norm[:, :, int(self.mask_out[0]):]
+            out_norm[:, :, :int(self.mask_out[0][0])] = tmp_norm[:, :, :int(cut_idx[0])]
+            for idx in range(len(self.mask_out) - 1):
+                out_norm[:, :, int(self.mask_out[idx][1] + 1):int(self.mask_out[idx+1][0])] = tmp_norm[:, :, int(cut_idx[idx]):int(cut_idx[idx+1])] #tmp_norm[:, :, int(self.mask_out[idx][0]):int(self.mask_out[idx+1][0])]
+                #out_norm[:, :, :int(self.mask_out[idx+1][0])] = tmp_norm[:, :, :int(self.mask_out[idx+1][0])]
+            out_norm[:, :, int(self.mask_out[-1][1] + 1):] = tmp_norm[:, :, int(cut_idx[-1]):]
+
         else:
             out_norm = self.norm(out_conv)
         return self.activation(out_norm)

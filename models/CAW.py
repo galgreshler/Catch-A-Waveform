@@ -47,7 +47,7 @@ class Discriminator(nn.Module):
     def __init__(self, params):
         super(Discriminator, self).__init__()
         if params.run_mode == 'inpainting':
-            mask = params.current_hole
+            mask = params.current_holes
         else:
             mask = None
         self.head = ConvBlock(params, 1, params.hidden_channels, params.dilation_factors[0], mask=mask)
