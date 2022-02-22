@@ -39,10 +39,10 @@ def plot_losses(params, loss_vectors):
         p.title.align = "center"
         p.width = FIG_WIDTH
         p.xaxis.axis_label = 'Epoch#'
-        p.line(range(params.num_epoches), -losses['v_err_real'], legend_label='D(real)', color=Category20[20][0])
-        p.line(range(params.num_epoches), losses['v_err_fake'], legend_label='D(fake)', color=Category20[20][1])
-        p.line(range(params.num_epoches), losses['v_gp'], legend_label='Gradient Penalty', color=Category20[20][2])
-        p.line(range(params.num_epoches), losses['v_rec_loss'], legend_label='Rec. Loss', color=Category20[20][3])
+        p.line(range(params.num_epochs), -losses['v_err_real'], legend_label='D(real)', color=Category20[20][0])
+        p.line(range(params.num_epochs), losses['v_err_fake'], legend_label='D(fake)', color=Category20[20][1])
+        p.line(range(params.num_epochs), losses['v_gp'], legend_label='Gradient Penalty', color=Category20[20][2])
+        p.line(range(params.num_epochs), losses['v_rec_loss'], legend_label='Rec. Loss', color=Category20[20][3])
         p.legend.click_policy = "hide"
         p_vec.append(p)
     show(column(p_vec))
