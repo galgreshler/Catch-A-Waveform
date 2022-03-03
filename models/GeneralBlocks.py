@@ -37,9 +37,9 @@ class ConvBlock(nn.Sequential):
             for hole in self.mask_in:
                 self.mask_out.append([hole[0] - self.rf, hole[1]])
             # ???
-            for idx in range(len(self.mask_out) - 1):
-                if self.mask_out[idx+1][0] < self.mask_out[idx][1]:
-                    self.mask_out[idx+1][0] = self.mask_out[idx][1] + 1
+            # for idx in range(len(self.mask_out) - 1):
+            #     if self.mask_out[idx+1][0] < self.mask_out[idx][1]:
+            #         self.mask_out[idx+1][0] = self.mask_out[idx][1] + 1
 
         else:
             self.mask_out = None
