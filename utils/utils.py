@@ -17,20 +17,22 @@ def get_noise(params, shape):
 
 
 def stitch_signals(real_signal, signal_to_stitch, frame_idcs, window_size=2 ** 14 - 1):
-    if window_size % 2 == 0:
-        window_size -= 1
     naive_stitched_signal = np.copy(real_signal)
-    naive_stitched_signal[frame_idcs] = signal_to_stitch[frame_idcs]
+    for idx in frame_idcs:
+        naive_stitched_signal[idx] = signal_to_stitch[idx]
     # overlap add between real and generated signals
     ola_stitched_signal = np.copy(naive_stitched_signal)
-    window = np.hanning(window_size)
-    transition_in_idcs = range(frame_idcs[0] - (window_size + 1) // 2, frame_idcs[0])
-    in_window = window[:(window_size + 1) // 2]
-    out_window = window[(window_size + 1) // 2 - 1:]
-    transition_out_idcs = range(frame_idcs[-1], frame_idcs[-1] + window_size // 2 + 1)
-    ola_stitched_signal[transition_in_idcs] = in_window * signal_to_stitch[transition_in_idcs] + out_window * \
+    for i, win_size in enumerate(window_size):
+        if win_size % 2 == 0:
+            win_size -= 1
+        window = np.hanning(win_size)
+        transition_in_idcs = range(frame_idcs[i][0] - (win_size + 1) // 2, frame_idcs[i][0])
+        in_window = window[:(win_size + 1) // 2]
+        out_window = window[(win_size + 1) // 2 - 1:]
+        transition_out_idcs = range(frame_idcs[i][-1], frame_idcs[i][-1] + win_size // 2 + 1)
+        ola_stitched_signal[transition_in_idcs] = in_window * signal_to_stitch[transition_in_idcs] + out_window * \
                                               real_signal[transition_in_idcs]
-    ola_stitched_signal[transition_out_idcs] = in_window * real_signal[transition_out_idcs] + out_window * \
+        ola_stitched_signal[transition_out_idcs] = in_window * real_signal[transition_out_idcs] + out_window * \
                                                signal_to_stitch[transition_out_idcs]
     return ola_stitched_signal
 
@@ -85,10 +87,12 @@ def calc_gradient_penalty(params, netD, real_data, fake_data, LAMBDA, alpha=None
         mask_ratio = 1
     disc_interpolates = netD(interpolates, use_mask)
     if params.run_mode == 'inpainting':
-        disc_interpolates = torch.cat(
-            (disc_interpolates[:, :, :params.not_valid_idx_start],
-             disc_interpolates[:, :, params.not_valid_idx_end + 1:]),
-            dim=2)
+        disc_interpolates_cp = disc_interpolates.clone()
+        disc_interpolates = disc_interpolates_cp[:, :, :params.not_valid_idx_start[0]]
+        if len(params.current_holes) > 1:
+            for i in range(len(params.current_holes) - 1):
+                disc_interpolates = torch.cat((disc_interpolates, disc_interpolates_cp[:, :, params.not_valid_idx_end[i] + 1:params.not_valid_idx_start[i+1]]), dim=2)
+        disc_interpolates = torch.cat((disc_interpolates, disc_interpolates_cp[:, :, params.not_valid_idx_end[-1] + 1:]), dim=2)
     if _grad_outputs is None:
         _grad_outputs = torch.ones(disc_interpolates.size())
         if torch.cuda.is_available():
@@ -116,9 +120,11 @@ def create_input_signals(params, input_signal, Fs):
         else:
             coarse_sig = torch.Tensor(librosa.resample(input_signal.squeeze().numpy(), Fs, fs))
         if params.run_mode == 'inpainting':
-            if (params.inpainting_indices[1] - params.inpainting_indices[0]) / params.Fs * fs > len(
-                    coarse_sig) - 2 * rf:
-                continue
+            holes_sum = 0
+            for hole_idx in params.inpainting_indices:
+                holes_sum += hole_idx[1] - hole_idx[0] + 2*rf
+            if (holes_sum) / params.Fs * fs > len(coarse_sig):
+                    continue
         if params.speech and fs < 500:
             continue
         if params.set_first_scale_by_energy and not params.speech:
