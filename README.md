@@ -45,6 +45,12 @@ samples, through the parameter `inpainting_indices`:
 python train_main.py --input_file <input_file_name> --run_mode inpainting --inpainting_indices <hole_start_idx> <hole_end_idx>
 ```
 
+Inpainting multiple holes can be done by providing multiple indices, e.g.:
+ 
+ ```
+python train_main.py --input_file <input_file_name> --run_mode inpainting --inpainting_indices <hole1_start_idx> <hole1_end_idx> <hole2_start_idx> <hole2_end_idx> ...
+```
+
 ### Denoising
 
 To train denoising task, set `run_mode` to `denosing`:
@@ -179,9 +185,10 @@ If you use this code in your research, please cite our paper:
 
 ```
 @article{greshler2021catch,
-  title={Catch-A-Waveform: Learning to Generate Audio from a Single Short Example},
-  author={Greshler, Gal and Shaham, Tamar Rott and Michaeli, Tomer},
-  journal={arXiv preprint arXiv:2106.06426},
+  title={Catch-a-waveform: Learning to generate audio from a single short example},
+  author={Greshler, Gal and Shaham, Tamar and Michaeli, Tomer},
+  journal={Advances in Neural Information Processing Systems},
+  volume={34},
   year={2021}
 }
 ```
@@ -202,3 +209,4 @@ Some code was adapted from:
 - [SinGAN](https://github.com/tamarott/SinGAN).
 - Resampling - [ResizeRight](https://github.com/assafshocher/ResizeRight).
 - MSS loss function - [Jukexbox](https://github.com/openai/jukebox/).
+- Thanks [Federico Miotello](https://github.com/fmiotello) for the multiple holes inpainting implementation.
