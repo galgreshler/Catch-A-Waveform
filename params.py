@@ -37,7 +37,7 @@ class Params(object):
         ###########################
         # Optimization Parameters #
         ###########################
-        self.num_epoches = 2000
+        self.num_epochs = 2000
         self.learning_rate = 0.0015
         self.scheduler_lr_decay = 0.1
         self.beta1 = 0.5
@@ -49,5 +49,3 @@ class Params(object):
         self.num_layers = 8
         self.hidden_channels_init = 16
         self.growing_hidden_channels_factor = 6
-
-

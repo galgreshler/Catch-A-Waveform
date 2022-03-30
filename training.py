@@ -72,9 +72,7 @@ def train_single_scale(params, signals_list, fs_list, generators_list, noise_amp
     if params.run_mode == 'inpainting':
         current_mask = params.masks[scale_idx]
         params.current_mask = current_mask
-        params.current_hole = torch.Tensor([int(params.inpainting_indices[0] / params.Fs * params.current_fs),
-                                            int(params.inpainting_indices[1] / params.Fs * params.current_fs)]).to(
-            params.device)
+        params.current_holes = torch.Tensor([(int(idx[0] / params.Fs * params.current_fs), int(idx[1] / params.Fs * params.current_fs)) for idx in params.inpainting_indices]).to(params.device)
 
     # Create inputs
     real_signal = input_signal.reshape(1, 1, N)
@@ -128,20 +126,20 @@ def train_single_scale(params, signals_list, fs_list, generators_list, noise_amp
                                                       gamma=params.scheduler_lr_decay)
 
     # Initialize error vectors
-    v_err_real = np.zeros(params.num_epoches, )
-    v_err_fake = np.zeros(params.num_epoches, )
-    v_gp = np.zeros(params.num_epoches, )
-    v_rec_loss = np.zeros(params.num_epoches, )
+    v_err_real = np.zeros(params.num_epochs, )
+    v_err_fake = np.zeros(params.num_epochs, )
+    v_gp = np.zeros(params.num_epochs, )
+    v_rec_loss = np.zeros(params.num_epochs, )
 
-    epoches_start_time = time.time()
+    epochs_start_time = time.time()
     # prepare inputs for gradient penalty
     if not params.run_mode == 'inpainting':
         D_out_shape = torch.Size((1, 1, N - 2 * pad_size))
         _grad_outputs = torch.ones(D_out_shape, device=params.device)
-    grad_pen_alpha_vec = torch.rand(params.num_epoches).to(params.device)
+    grad_pen_alpha_vec = torch.rand(params.num_epochs).to(params.device)
 
     inputs_lengths = params.inputs_lengths
-    for epoch_num in range(params.num_epoches):
+    for epoch_num in range(params.num_epochs):
         print_progress = epoch_num % 100 == 0
         # Create noise
         noise_signal = get_noise(params, real_signal.shape)
@@ -154,11 +152,14 @@ def train_single_scale(params, signals_list, fs_list, generators_list, noise_amp
         if params.run_mode == 'inpainting':
             out_D_real = netD(real_signal, use_mask=True)
             tot_samples = out_D_real.shape[2]
-            params.not_valid_idx_start = int(params.current_hole[0] - receptive_field / 1e3 * params.current_fs + 1)
-            params.not_valid_idx_end = int(params.current_hole[1] + 1)  # +1 is because of pe filter
-            out_D_real = torch.cat(
-                (out_D_real[:, :, :params.not_valid_idx_start], out_D_real[:, :, params.not_valid_idx_end + 1:]),
-                dim=2)
+            params.not_valid_idx_start = [int(idx[0] - receptive_field / 1e3 * params.current_fs + 1) for idx in params.current_holes]
+            params.not_valid_idx_end = [int(idx[1] + 1) for idx in params.current_holes]  # +1 is because of pe filter
+            out_D_real_cp = out_D_real.clone()
+            out_D_real = out_D_real_cp[:, :, :params.not_valid_idx_start[0]]
+            if len(params.current_holes) > 1:
+                for i in range(len(params.current_holes) - 1):
+                    out_D_real = torch.cat((out_D_real, out_D_real_cp[:, :, params.not_valid_idx_end[i] + 1:params.not_valid_idx_start[i+1]]), dim=2)
+            out_D_real = torch.cat((out_D_real, out_D_real_cp[:, :, params.not_valid_idx_end[-1] + 1:]), dim=2)
             mask_ratio = tot_samples / out_D_real.shape[2]
         else:
             mask_ratio = 1
@@ -276,7 +277,7 @@ def train_single_scale(params, signals_list, fs_list, generators_list, noise_amp
 
         if print_progress:
             print('[%d/%d] D(real): %.2f. D(fake): %.2f. rec_loss: %.4f. gp: %.4f ' % (
-                epoch_num, params.num_epoches, -err_real_D_val, err_fake_D_val, rec_loss_val, gradient_penalty_val))
+                epoch_num, params.num_epochs, -err_real_D_val, err_fake_D_val, rec_loss_val, gradient_penalty_val))
 
         schedulerD.step()
         schedulerG.step()
@@ -284,16 +285,16 @@ def train_single_scale(params, signals_list, fs_list, generators_list, noise_amp
         # Some memory cleanup
         fake_signal = fake_signal.detach()
         reconstructed_signal = reconstructed_signal.detach()
-        if epoch_num < params.num_epoches - 1:
+        if epoch_num < params.num_epochs - 1:
             del fake_signal, reconstructed_signal, rec_loss, rec_loss_t, rec_loss_f
         del noise_signal, input_noise
         if scale_idx > 0:
             del prev_signal
 
-    epoches_stop_time = time.time()
+    epochs_stop_time = time.time()
     runtime_msg = 'Total time in scale %d: %d[sec] (%.2f[sec]/epoch on avg.). D(real): %f, D(fake): %f, rec_loss: %.4f. gp: %.4f' % (
-        current_scale, epoches_stop_time - epoches_start_time,
-        (epoches_stop_time - epoches_start_time) / params.num_epoches,
+        current_scale, epochs_stop_time - epochs_start_time,
+        (epochs_stop_time - epochs_start_time) / params.num_epochs,
         -err_real_D_val, err_fake_D_val, rec_loss_val, gradient_penalty_val)
     print(runtime_msg)
     with open(os.path.join(output_folder, 'log.txt'), 'a') as f:
