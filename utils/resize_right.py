@@ -279,7 +279,7 @@ def get_field_of_view(projected_grid, cur_support_sz, in_sz, fw, eps):
     # next we do a trick instead of padding, we map the field of view so that
     # it would be like mirror padding, without actually padding
     # (which would require enlarging the input tensor)
-    mirror = fw_cat((fw.arange(in_sz), fw.arange(in_sz - 1, -1, step=-1)), fw)
+    mirror = fw_cat((fw.arange(in_sz), fw.arange(in_sz - 1, -1, step=-1)), fw).cuda()
     field_of_view = mirror[fw.remainder(field_of_view, mirror.shape[0])]
     field_of_view = fw_set_device(field_of_view,projected_grid.device, fw)
     return field_of_view
