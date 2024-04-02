@@ -109,7 +109,7 @@ def train_single_scale(params, signals_list, fs_list, generators_list, noise_amp
 
     reconstruction_noise = signal_padder(reconstruction_noise)
 
-    if scale_idx > 1:
+    if scale_idx >= 1:
         netG.load_state_dict(
             torch.load('%s/netGScale%d.pth' % (params.output_folder, scale_idx - 1), map_location=params.device))
         netD.load_state_dict(
